@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/cd/8e/82/cd8e82fcb59e4e274ce6e296a5caac5e.gif'); 
+            background-size: cover; 
+            background-position: center; 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-image: url('https://i.pinimg.com/originals/fc/3b/d1/fc3bd13b038d2a361bf4e3708350eb38.gif');
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        p {
+            color: #ffffff;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .compliment-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .compliment {
+            margin-top: 10px;
+            color: #4CAF50;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        button {
+            background-color: #e7eb0d; 
+            border: none;
+            color: white;
+            padding: 8px 16px; 
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px; 
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #f50fbc; 
+        }
+    </style>
+</head>
+<body>
+
+</style>
+</head>
+<body>
+
+<audio id="myAudio">
+  <source src="80's makeout session.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()">Play Music</button>
+<button onclick="stopMusic()">Stop Music</button>
+
+<script>
+var audio = document.getElementById("myAudio");
+
+function playMusic() {
+  audio.play();
+}
+
+function stopMusic() {
+  audio.pause();
+}
+</script>
+
+<div class="container">
+    <h1>Congratulations!</h1>
+    <p>Ang tagumpay mo ay tunay na kahanga-hanga!</p>
+    <div class="compliment-container">
+        <div class="compliment" id="compliment"></div>
+        <button onclick="generateCompliment()">Generate Compliment</button>
+    </div>
+</div>
+
+<script>
+    const compliments = [
+        "Napakatalino mo talaga!",
+        "Sobrang galing mo!",
+        "Ikaw ang inspirasyon ng marami!",
+        "Ang puso mo ay laging bukas para sa iba!",
+        "Hindi ka lang magaling, kundi napakahusay mo rin!",
+        "Patuloy kang lumalaban at hindi sumusuko!",
+        "Ikaw ay mahalaga!",
+        "Ang iyong determinasyon ay kahanga-hanga!",
+        "Kahit saan ka magpunta, andito lang ako para sa iyo!",
+        "Kahit ano pa ang mangyari, mananatili akong kainigan!",
+        "Walang makakapigil sa iyong tagumpay!",
+        "Salamat sa iyong kabutihan at pagmamahal!",
+        "Laging kasama mo ang suwerte sa bawat pagkilos!",
+        "Ikaw ay tapang at tiyaga!",
+        "Walang katulad ang iyong galing!",
+        "Hinding-hindi kita malilimutan!",
+        "Ang iyong mga tagumpay ay aking ikinararangal!",
+        "Ikaw ang tanglaw sa madilim na panahon!",
+        "Bawat hakbang mo ay may kabuluhan at saysay!",
+        "Ikaw ang aking sandigan sa mga oras ng pangangailangan!",
+        "Salamat sa iyong walang sawang suporta at pagmamahal!",
+        "Tuloy mo lang ang pag-akyat patungo sa iyong pangarap!",
+        "Ikaw ang buhay na patotoo ng pagsisikap at tiyaga!",
+        "Wala nang mas hihigit pa sa iyong kagandahang loob!",
+        "Ang iyong ngiti ay lihim na nakapapawi ng kalungkutan!",
+        "Kasama ka sa akin sa bawat tagumpay na hinaharap natin!",
+        "Ang iyong pagmamahal sa kapwa ay walang kapantay!",
+        "Bilang gantimpala sa iyong sipag, nararapat kang purihin!",
+        "Sa iyo'y walang pagkalimot sa aming mga puso!",
+        "Kahit anong hamon ang dumating, alam naming kakayanin mo!",
+        "Ang bawat araw ay isang patunay ng iyong kabutihan!",
+        "Maraming salamat sa pagiging bahagi ng aking buhay!",
+        "Tiwala ako sa iyong kakayahan at talento!",
+        "Nagpapasalamat ako sa bawat araw na ikaw ay kasama ko!",
+        "Sa iyo'y may inspirasyon, pag-asa, at pagmamahal!",
+        "Ang iyong ganda ay hindi lamang sa panlabas na anyo!",
+        "Napakabuti ng iyong puso at kaluluwa!",
+        "Sa iyo, ang bawat tagumpay ay isang magandang karanasan!",
+        "Salamat sa pagiging isang tunay na kaibigan!",
+        "Ikaw ang aking gabay sa mga oras ng kagipitan!",
+        "Bawat pagpupunyagi mo ay may magandang resulta!",
+        "Ang iyong kabutihan ay patuloy na umaagos sa bawat isa!",
+        "Napakadami nang nagpapasalamat sa iyong kabutihan!",
+        "Ang iyong mga pangarap ay tagumpay na tagumpay!",
+        "Ikaw ang tunay na bituin sa aking buhay!",
+        "Patuloy kang maging inspirasyon sa lahat!",
+        "Napakabuti mo sa aking mga puso at kaluluwa!",
+        "Sa iyo'y may lihim na pasasalamat at pag-ibig!",
+        "Tulad ng pag-ulan, ang iyong kabutihan ay walang katapusan!",
+        "Kahit anong mangyari, nandito lang ako para sa iyo!",
+        "Ikaw ang nagbibigay liwanag sa aking madilim na landas!",
+        "Napakalaki ng pasasalamat ko sa iyo!",
+        "Hindi magbabago ang aking pagmamahal at suporta sa iyo!"
+    ];
+
+    function generateCompliment() {
+        const randomIndex = Math.floor(Math.random() * compliments.length);
+        const compliment = compliments[randomIndex];
+        document.getElementById('compliment').innerText = compliment;
+    }
+</script>
+
+</body>
+</html>
